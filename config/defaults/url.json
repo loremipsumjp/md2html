@@ -1,0 +1,10 @@
+{
+  "development": {
+    "default": "/data/config.json",
+    "fallback": "/data/config.json"
+  },
+  "production": {
+    "default": "http://xxxxxxx.s3-ap-northeast-1.amazonaws.com/config.json",
+    "fallback": "/data/config.json"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "inherits": "^2.0.1",
+    "jszip": "^2.5.0",
+    "marked": "^0.3.5",
+    "q": "^1.4.1",
+    "vue": "^1.0.16"
+  },
+  "devDependencies": {
+    "co": "^4.6.0",
+    "connect": "^3.4.1",
+    "cpr": "^1.0.0",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "json-loader": "^0.5.4",
+    "morgan": "^1.6.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "serve-static": "^1.10.2",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "postinstall": "node bin/init.js",
+    "start": "node_modules/.bin/webpack-dev-server --inline --port=8080 --content-base=./public/",
+    "build": "node bin/build.js",
+    "serve": "node bin/serve.js",
+    "sync": "aws s3 sync --delete --acl public-read ./dist/ s3://md2html.me/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

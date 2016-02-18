@@ -1,0 +1,14 @@
+{
+  "defaultTemplateIndex": 0,
+  "templates": [
+    {
+      "name": "Default",
+      "metadataUrl": "/data/templates/default/metadata.json",
+      "contentUrl": "/data/templates/default/content.md",
+      "documentUrl": "/data/templates/default/document.html",
+      "bodyUrl": "/data/templates/default/body.html",
+      "styleUrl": "/data/templates/default/style.css",
+      "scriptUrl": "/data/templates/default/script.js"
+    }
+  ]
+}

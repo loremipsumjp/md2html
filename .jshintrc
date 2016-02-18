@@ -1,0 +1,16 @@
+{
+  "asi": true,
+  "globalstrict": true,
+  "globals": {
+    "ENV": true,
+    "ejs": true,
+    "module": true,
+    "window": true,
+    "console" true,
+    "process": true,
+    "require": true,
+    "document": true,
+    "__dirname": true,
+    "XMLHttpRequest": true
+  }  
+}

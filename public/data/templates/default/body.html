@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="buttons">
+    <button id="json">JSON</button> 
+    <button id="markdown">Markdown</button> 
+    <button id="print">Print</button>
+  </div>
+  <div class="paper">
+    <div class="title"><%= title %></div>
+    <div class="date"><%= md2html.timestamp.getFullYear() %>/<%= md2html.timestamp.getMonth() + 1 %>/<%= md2html.timestamp.getDate() %></div>
+    <div class="author"><%= author %></div><%- md2html.rendered.content %>
+  </div>
+</div>
+<script type="text/plain" id="timestamp"><%- md2html.timestamp.toISOString() %></script>
+<script type="text/plain" id="metadata"><%- md2html.form.metadata %></script>
+<script type="text/plain" id="content"><%- md2html.form.content %></script>

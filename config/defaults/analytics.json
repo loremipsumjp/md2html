@@ -1,0 +1,8 @@
+{
+  "development": {
+    "trackingId": null
+  },
+  "production": {
+    "trackingId": "UA-00000000-0"
+  }
+}

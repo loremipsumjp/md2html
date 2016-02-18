@@ -1,0 +1,58 @@
+nav.navbar.navbar-default.navbar-static-top
+  .container
+    .navbar-header
+      a.navbar-brand(href='./') Markdown Converter
+
+.container
+  .row
+    .col-md-6
+      .form-group
+        label.control-label(for='config-url') Config | URL
+        .row
+          .col-md-9
+            input.form-control(type='text', name='config-url', id='config-url', v-model='self.form.configUrl')
+          .col-md-3
+            button.btn.btn-default.btn-block(v-on:click='onClickLoadConfig') Load
+      .form-group
+        label.control-label(for='config-index') Template
+        .row
+          .col-md-9
+            select.form-control(type='text', name='template-index', id='template-index', v-model='self.form.templateIndex')
+              option(v-for='(i, template) in self.config.templates', v-bind:value='i') {{ template.name }}
+          .col-md-3
+            button.btn.btn-default.btn-block(v-on:click='onClickLoadTemplate') Load
+    .col-md-6#adsense
+  .row
+    .col-md-6
+      label.control-label(for='metadata') Metadata | JSON
+      textarea.form-control(rows='10', wrap='off', name='metadata', id='metadata', v-model='self.form.metadata')
+    .col-md-6
+      label.control-label(for='content') Content | Markdown
+      textarea.form-control(rows='10', wrap='off', name='content', id='content', v-model='self.form.content')
+  .row
+    .col-md-6
+      label.control-label(for='document') Document | HTML
+      textarea.form-control(rows='10', wrap='off', name='document', id='document', v-model='self.form.document')
+    .col-md-6
+      label.control-label(for='body') Body | HTML
+      textarea.form-control(rows='10', wrap='off', name='body', id='body', v-model='self.form.body')
+  .row
+    .col-md-6
+      label.control-label(for='style') Style | CSS
+      textarea.form-control(rows='10', wrap='off', name='style', id='style', v-model='self.form.style')
+    .col-md-6
+      label.control-label(for='script') Script | JavaScript
+      textarea.form-control(rows='10', wrap='off', name='script', id='script', v-model='self.form.script')
+  hr 
+  .row
+    .col-md-12
+      .text-right
+        button.btn.btn-default(v-on:click='onClickDownloadConfig') Download Config
+        | 
+        button.btn.btn-default(v-on:click='onClickDownloadTemplate') Download Template
+        | 
+        button.btn.btn-primary(v-on:click='onClickConvert') Convert
+
+footer
+  .container
+    p &copy; Lorem Ipsum Co. Ltd. 2016

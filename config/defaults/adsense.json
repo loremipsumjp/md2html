@@ -1,0 +1,12 @@
+{
+  "development": {
+    "client": null,
+    "slot": null,
+    "format": null
+  },
+  "production": {
+    "client": "xx-xxx-0000000000000000",
+    "slot": "0000000000",
+    "format": "xxxx"
+  }
+}

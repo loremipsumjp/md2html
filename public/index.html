@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Markdown Converter</title>
+    <meta name="description" content="Markdown2HTML help you convert a Markdown snippet to a HTML snippet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <main>
+      <div id="spinner">
+        <i class="fa fa-refresh fa-spin fa-5x"></i>
+      </div>
+    </main>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/ejs.min.js"></script>
+    <script src="js/bundle.js"></script>
+    <script>
+      (function () {
+        var initialize = window.lib.initialize
+        var MainComponent = window.components.MainComponent
+
+        var mainComponent = new MainComponent()
+
+        initialize()
+          .then(function (options) {
+            mainComponent.initialize(options)
+
+            var vm = new Vue(mainComponent.getVueOptions())
+            vm.$mount('main')
+          })
+          .catch(function (err) {
+            console.error(err.stack)
+          })
+
+        window.mainComponent = mainComponent
+      })();
+    </script>
+    <script>
+      (function () {
+        window.mainComponent.on('ready', function () {
+          $('#adsense').append(/* insert:partials/adsense.html */)
+        })
+      })();
+    </script>
+    <!-- insert:partials/analytics.html -->
+  </body>
+</html>
